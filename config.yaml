@@ -1,0 +1,5 @@
+build:
+  system_packages:
+    - "libssl-dev"
+  python_packages:
+    - "sentence-transformers"
