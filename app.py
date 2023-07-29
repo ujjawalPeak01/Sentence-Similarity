@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer, util
 
 class InferlessPythonModel:
     def initialize(self):
-        self.pipe = SentenceTransformer("##huggingface_name##")
+        self.pipe = SentenceTransformer("sentence-transformers/paraphrase-albert-base-v2")
 
     def infer(self, inputs):
         query = inputs["query"]
