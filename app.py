@@ -11,8 +11,6 @@ class InferlessPythonModel:
         sentence_2 = inputs["sentence_2"]
 
         embeddings = self.pipe.encode([sentence_1, sentence_2])
-        print(embeddings, flush=True)
-        print(type(embeddings), flush=True)
 
         return {"result": str(embeddings)}
 
