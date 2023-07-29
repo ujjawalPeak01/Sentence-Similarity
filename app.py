@@ -20,7 +20,7 @@ class InferlessPythonModel:
             value = util.cos_sim(query_embedding, sentence_embeddings[i]).item()
             result[sentences[i]] = round(value, 4)
 
-        return {"result": result}
+        return {"result": str(result)}
 
     def finalize(self, args):
         self.pipe = None
