@@ -7,20 +7,12 @@ class InferlessPythonModel:
         self.pipe = SentenceTransformer("sentence-transformers/paraphrase-albert-base-v2")
 
     def infer(self, inputs):
-        query = inputs["query"]
-        sentences = inputs["sentences"]
+        sentence_1 = inputs["sentence_1"]
+        sentence_2 = inputs["sentence_2"]
 
-        query_embedding = self.pipe.encode(query)
-        sentence_embeddings = []
-        for sentence in sentences:
-            sentence_embeddings.append(self.pipe.encode(sentence))
+        embeddings = self.pipe.encode([sentence_1, sentence_2])
 
-        result = {}
-        for i in range(len(sentence_embeddings)):
-            value = util.cos_sim(query_embedding, sentence_embeddings[i]).item()
-            result[sentences[i]] = round(value, 4)
-
-        return {"result": str(result)}
+        return {"result": str(embeddings)}
 
     def finalize(self, args):
         self.pipe = None
