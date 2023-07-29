@@ -22,5 +22,5 @@ class InferlessPythonModel:
 
         return {"result": result}
 
-    def finalize(self):
+    def finalize(self, args):
         self.pipe = None
