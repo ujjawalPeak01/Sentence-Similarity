@@ -8,7 +8,6 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         sentences = inputs["sentences"]
-        print(sentences, flush=True)
 
         embeddings = self.pipe.encode(sentences)
 
