@@ -73,7 +73,6 @@ The following is a sample Input and Output JSON for this model which you can use
       "data": [
         -0.07819648087024689,
         1.3333008289337158,
-        ...,
         -0.10979261249303818,
         -0.27275943756103516,
       ]
