@@ -37,21 +37,12 @@ The following is a sample Input and Output JSON for this model which you can use
   "inputs": [
     {
       "data": [
-        "Where can I get good chinese food?"
+        "Where can I get good chinese food?",
+        "Where can I get good Indian food?"
       ],
-      "name": "sentence_1",
+      "name": "sentences",
       "shape": [
-        1
-      ],
-      "datatype": "BYTES"
-    },
-    {
-      "data": [
-        "Where can I get nice Italian food?"
-      ],
-      "name": "sentence_2",
-      "shape": [
-        1
+        2
       ],
       "datatype": "BYTES"
     }
@@ -90,29 +81,20 @@ curl --location '<your_inference_url>' \
           --header 'Content-Type: application/json' \
           --header 'Authorization: Bearer <your_api_key>' \
           --data '{
-                    "inputs": [
-                      {
-                        "data": [
-                          "Where can I get good chinese food?"
-                        ],
-                        "name": "sentence_1",
-                        "shape": [
-                          1
-                        ],
-                        "datatype": "BYTES"
-                      },
-                      {
-                        "data": [
-                          "Where can I get nice Italian food?"
-                        ],
-                        "name": "sentence_2",
-                        "shape": [
-                          1
-                        ],
-                        "datatype": "BYTES"
-                      }
-                    ]
-                  }
+                  "inputs": [
+                    {
+                      "data": [
+                        "Where can I get good chinese food?",
+                        "Where can I get good Indian food?"
+                      ],
+                      "name": "sentences",
+                      "shape": [
+                        2
+                      ],
+                      "datatype": "BYTES"
+                    }
+                  ]
+                }
             '
 ```
 
