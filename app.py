@@ -12,7 +12,7 @@ class InferlessPythonModel:
 
         embeddings = self.pipe.encode([sentence_1, sentence_2])
 
-        return {"result": str(embeddings.tolist())}
+        return {"result": embeddings}
 
     def finalize(self, args):
         self.pipe = None
